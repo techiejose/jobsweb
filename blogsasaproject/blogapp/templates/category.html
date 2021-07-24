@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="row">
+<div class="col-lg-3">
+<div class="card">
+  <div class="card-header mobileheader">
+      <span class="category mr-4"> Category </span><i class="fa fa-caret-down ml-4" aria-hidden="true" style="font-size:24px"></i>
+  </div>
+  <div class="card-body hide-on-mobile">
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'banking' %}">Banking</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ banking }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'customer service' %}">Customer service</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ customerservice }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'medical' %}">Medical</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ medical }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'software engineering' %}">Software Engineering</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ softwareengineering }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'internship' %}">Internship</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ internship }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'agriculture' %}">Agriculture</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ agriculture }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'administration' %}">Administration</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ administration }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'driving' %}">Driving</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ driving }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'consultancy' %}">Consultancy</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ consultancy }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'catering' %}">Catering</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ catering }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'engineering' %}">Engineering</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ engineering }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'teaching' %}">Teaching</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ teaching }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'marketing' %}">Marketing</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ marketing }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'sales' %}">Sales</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ sales }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'procurement' %}">Procurement</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ procurement }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'art' %}">Art</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ art }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'legal services' %}">Legal services</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ legal }}</a></span></div>
+      <div class="row"> <div class="col-lg-10"> <a class="nav-link active hide-on-mobile link widthdm"style="display:inline;" aria-current="page" href="{% url 'category' 'human resource' %}">Human resource</a></div><span class="count py-1 px-1 col-lg-2" style="display:inline;"><a class="countbg" href="">{{ humanresource }}</a></span></div>
+  </div>
+</div>
+</div>
+<div class="col-lg-9 content">
+    {% if category_posts %}
+    <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" class="hide">Description</th>
+      <th scope="col" class="hide">Position</th>
+      <th scope="col" > <d>Deadline</d></th>
+    </tr>
+  </thead>
+
+    {% for post1 in category_posts %}
+  <tbody>
+    <tr>
+        <td><a class="" style="display:inline;" href="{% url 'postdetail' post1.pk %}" class="txt">{{ post1.description|slice:":200" }}...</a></td>
+      <td class="hide1">
+          <a class="" style="display:inline;" href="{% url 'postdetail' post1.pk %}" class="txt">{{ post1.position }}</a></td>
+        <td class="hide1"><a class="" style="display:inline;" href="{% url 'postdetail' post1.pk %}" class="txt"><h6>{{ post1.deadline }}</h6></a></td>
+    </tr>
+{% endfor %}
+  {% else %}
+    <p>Category didn't return any results</p>
+    {% endif %}
+  </tbody>
+</table>
+
+</div>
+</div>
+</div>
+
+    {% endblock %}

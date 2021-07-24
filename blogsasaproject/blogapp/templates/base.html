@@ -1,0 +1,153 @@
+{% load static %}
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Jobsasa jobs</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="jquery.cookie.js"></script>
+<script>
+function subscriptionPopup(){
+    // get the mPopup
+    var mpopup = $('.modal');
+
+    // open the mPopup
+    mpopup.show();
+
+    // close the mPopup once close element is clicked
+    $(".close1").on('click',function(){
+        mpopup.hide();
+    });
+
+    // close the mPopup when user clicks outside of the box
+    $(window).on('click', function(e) {
+        if(e.target == mpopup[0]){
+            mpopup.hide();
+        }
+    });
+}
+$(document).ready(function(){
+  $(".mobileheader").click(function(){
+  $(".card-body").addClass("show-on-mobile");
+  $(".card-body").removeClass("hide-on-mobile");
+    $(".card-body").toggle();
+  });
+
+var element= localStorage.getItem('status');
+        if (element == null || element == '') {
+            localStorage.setItem('status', 1);
+        setTimeout( function() {
+            subscriptionPopup();
+        },10000);
+}
+});
+</script>
+
+  </head>
+
+  <div class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          <img src="{% static 'images/logo4.png'%}" alt="logo" width="90"class="logo" height="40">
+      </div>
+      <div class="modal-body">
+          <form class="needs-validation" method="post">
+              {% csrf_token %}
+        <div class="form-group">
+<h5 class="modal-title">Subscribe to receive job alerts</h5>
+    Do you want to receive email notifications when new jobs are posted?
+
+  </div>
+      </div>
+      <div class="modal-footer">
+        <a href="{% url 'register' %}" class="btn post"style="height:40px;width:160px;display:inline;">Yes</a>
+        <button type="button" class="btn btn-secondary close1"style="display:inline;" data-dismiss="modal">Close</button>
+      </div>
+        </form>
+    </div>
+  </div>
+</div>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <a href="{% url 'home' %}" class="logomobile"style="height:40px;width:160px;"><img src="{% static 'images/logo4.png'%}" alt="logo" width="90"class="logo" height="40"></a>
+<form method="GET" action=""id="searchform">
+        <div class="input-group ml-5 searchmobile">
+  <input type="text" class="ml-5 searchtxt"style="height:40px;" name="q"value="{{ request.GET.q }}" placeholder="Search for a job " aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append " style="display:inline">
+    <button class="search mr-5" type="submit"style="height:40px;"><i class='fa fa-search '></i></button>
+  </div>
+</div>
+</form>
+
+  </div>
+        <a href="{% url 'post' %}" class="btn post ml-5"style="height:40px;width:160px;">Post a Job</a>
+        <a class="nav-link register " href="{% url 'register' %}">Register</a>
+</nav>
+{% block content %}
+
+    {% endblock %}
+
+    <!-- footer-->
+	<footer class="main-footer py-3">
+    <div class="container">
+        <div class="row ">
+            <div class="about col-md-4">
+                <p>
+                    Jobsasa is a jobs site for job seekers developed by a
+
+                        software developer
+
+                    to link job seekers to employers.<br><br>
+                    The ultimate goal of developing the site is to build the largest jobs site in Africa.
+                </p>
+            </div>
+            <div class="col-md-4">
+                <p style="font-size: 25px">Why us</p>
+                <div class="col-md-12">
+				<p>We are passionate about what we do</p>
+                   <p>We post many varieties of jobs</p>
+                </div>
+
+            </div>
+            <div class="contact col-md-4">
+                <p style="font-size: 25px">Contact us</p>
+                <div class="info">
+                    <p>Nairobi, Kenya</p>
+                    <p>Phone Kenya: +(254) 773 745 677 </p>
+                    <p>Email: <a href="mailto:info@company.com">info@jobsasa.com</a></p>
+                    <ul class="social-menu lisy-inline">
+                        <li class="list-inline-item"><a href="https://www.facebook.com/jobsasa" target="_blank" title="Facebook"><i class="fa fa-facebook"> </i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/jobsasa" target="_blank" title="Twitter"><i class="fa fa-twitter"> </i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyrights text-center py-2" style="margin-top: 5px">
+        <p>© 2019<span class="text-primary pt-3"> Jobsasa</span></p>
+    </div>
+</footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    -->
+
+  </body>
+</html>

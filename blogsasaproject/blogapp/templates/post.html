@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mb-5 mx-auto">
+<div class="col-lg-6 register-account mx-auto">
+<div id="appbundle_user">
+<h3>Post a Job</h3>
+<h4>The cost is Ksh. 1,000.00 for a job post for one month.</h4>
+ 1.GO TO MPESA<br>
+2.LIPA NA MPESA<br>
+3.PAYBILL > BUY GOODS AND SERVICES ><br>
+4.TILL NO :933250(scorpion Technologies) <br>
+5.ENTER AMOUNT :1000<br>
+ENTER YOUR MPESA PIN > SEND<br>
+<h6>we will post the job as soon as we receive the Payment </h6>
+<form method="post">
+ {% csrf_token %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-success form-control mt-2 mb-2">Submit</button>
+</form>
+ {% if msg %}
+<div class="alert alert-success alert-dismissible">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Success!</strong> Indicates a successful or positive action.
+</div>
+  {% endif %}
+
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
